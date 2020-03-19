@@ -34,8 +34,9 @@ const BlogList = props => {
               timeToRead,
               fields: { slug }
             }
-          }) => (
+          }, indexPost) => (
               <PostItem
+                key={indexPost}
                 slug={slug}
                 background={background}
                 category={category}
@@ -44,8 +45,7 @@ const BlogList = props => {
                 title={title}
                 description={description}
               />
-            )
-        )}
+            ))}
       </S.ListWrapper>
 
       <Pagination

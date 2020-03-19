@@ -16,7 +16,7 @@ const searchClient = algoliasearch(algolia.appId, algolia.searchOnlyApiKey)
 const Search = () => (
   <S.SearchWrapper>
     <InstantSearch searchClient={searchClient} indexName={algolia.indexName}>
-      <SearchBox autoFocus translations={{ placeholder: 'Digite oque deseja buscar aqui ...' }} />
+      <SearchBox autoFocus translations={{ placeholder: 'Procure aqui...' }} />
       <Stats
         translations={{
           stats(nbHits, timeSpentMs) {
