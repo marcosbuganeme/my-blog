@@ -4,12 +4,14 @@ import { Home } from '@styled-icons/boxicons-solid/Home'
 import { SearchAlt2 as Search } from '@styled-icons/boxicons-regular/SearchAlt2'
 import { LightBulb as Light } from '@styled-icons/entypo/LightBulb'
 import { Grid } from '@styled-icons/boxicons-solid/Grid'
+import { GraduationCap } from '@styled-icons/entypo/GraduationCap'
 import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt'
 import { ThList as List } from "@styled-icons/fa-solid/ThList"
 
 import getThemeColor from '../../utils/getThemeColor'
 
 import * as S from './styled'
+import * as GA from './trackers'
 
 const MenuBar = () => {
   const [theme, setTheme] = useState(null)
@@ -17,6 +19,11 @@ const MenuBar = () => {
 
   const isDarkMode = theme === "dark"
   const isListMode = display === "list"
+
+  if (theme !== null && display !== null) {
+    GA.themeTracker(theme)
+    GA.displayTracker(display)
+  }
 
   useEffect(() => {
     setTheme(window.__theme)
@@ -48,8 +55,21 @@ const MenuBar = () => {
           bg={getThemeColor()}
           duration={0.6}
           title="Pesquisar">
-          <S.MenuBarItem>
+          <S.MenuBarItem onClick={() => GA.searchClickTrack()}>
             <Search />
+          </S.MenuBarItem>
+        </S.MenuBarLink>
+
+        <S.MenuBarLink
+          to="/cursos/"
+          cover
+          direction="right"
+          bg={getThemeColor()}
+          title="Cursos"
+          activeClassName="active">
+          <S.MenuBarItem onClick={() => GA.courseClickTrack()}>
+            <GraduationCap />
+            <S.MenuBarNotification />
           </S.MenuBarItem>
         </S.MenuBarLink>
       </S.MenuBarGroup>
@@ -57,8 +77,18 @@ const MenuBar = () => {
       <S.MenuBarGroup>
         <S.MenuBarItem
           title="Mudar o tema"
-          onClick={() => { window.__setPreferredTheme(isDarkMode ? "light" : "dark") }}
-          className={theme}>
+          cover
+          onClick={() => {
+            window.__setPreferredTheme(isDarkMode ? "light" : "dark")
+
+            if (window.DISQUS !== undefined) {
+              window.setTimeout(() => {
+                window.DISQUS.reset({ reload: true })
+              }, 300)
+            }
+          }}
+          className={theme}
+          isDarkMode={isDarkMode}>
           <Light />
         </S.MenuBarItem>
 
@@ -68,8 +98,12 @@ const MenuBar = () => {
           className="display">
           {isListMode ? <Grid /> : <List />}
         </S.MenuBarItem>
-
-        <S.MenuBarItem title="Ir para o Topo">
+        <S.MenuBarItem
+          title="Ir para o Topo"
+          onClick={() => {
+            GA.topClickTrack()
+            window.scroll({ top: 0, behavior: 'smooth' })
+          }}>
           <Arrow />
         </S.MenuBarItem>
       </S.MenuBarGroup>

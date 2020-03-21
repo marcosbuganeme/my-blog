@@ -85,3 +85,14 @@ export const MenuBarItem = styled.span`
     width: 3.2rem;
   `}
 `
+
+export const MenuBarNotification = styled.span`
+  background: red;
+  border-radius: 50%;
+  display: block;
+  height: 0.4rem;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 0.4rem;
+`
