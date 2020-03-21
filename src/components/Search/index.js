@@ -1,6 +1,6 @@
 import React from 'react'
 import algoliasearch from 'algoliasearch/lite'
-import { InstantSearch, SearchBox, Hits, Stats } from 'react-instantsearch-dom'
+import { InstantSearch, SearchBox, Hits, Stats, Configure } from 'react-instantsearch-dom'
 
 import Hit from './Hit'
 import * as S from './styled'
@@ -15,8 +15,14 @@ const searchClient = algoliasearch(algolia.appId, algolia.searchOnlyApiKey)
 
 const Search = () => (
   <S.SearchWrapper>
-    <InstantSearch searchClient={searchClient} indexName={algolia.indexName}>
-      <SearchBox autoFocus translations={{ placeholder: 'Procure aqui...' }} />
+    <InstantSearch
+      searchClient={searchClient}
+      indexName={algolia.indexName}>
+      <Configure hitsPerPage={200} distinct />
+      <SearchBox
+        autoFocus
+        translations={{ placeholder: 'Procure aqui...' }}
+      />
       <Stats
         translations={{
           stats(nbHits, timeSpentMs) {
