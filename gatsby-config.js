@@ -7,7 +7,8 @@ module.exports = {
     title: `My blog`,
     description: `Meu blog pessoal!`,
     author: `Marcos Olavo Silva Buganeme`,
-    position: `Backend/Frontend Developer`,
+    position: `Developer | Devops`,
+    siteUrl: `https://marcosbuganeme.com.br`
   },
   plugins: [
     `gatsby-plugin-transition-link`,
@@ -65,24 +66,23 @@ module.exports = {
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
         queries,
-        chunkSize: 10000, // quantidade de dados de resultados, default 1000
-        enablePartialUpdates: true // default false
+        chunkSize: 10000,
+        enablePartialUpdates: true
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Marcos Buganeme`,
+        short_name: `MBuganeme`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#1C2938`,
+        theme_color: `#1C2938`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `static/assets/img/marcosbuganeme-icon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
   ],
 }
