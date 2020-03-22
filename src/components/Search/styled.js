@@ -36,7 +36,7 @@ export const SearchWrapper = styled.section`
     color: var(--texts);
   }
 
-  body#grid & {
+  body#card & {
     .ais-Hits-list {
       background-color: var(--borders);
       border-bottom: 1px solid var(--borders);
@@ -47,6 +47,7 @@ export const SearchWrapper = styled.section`
       grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
       margin-top: 2rem;
     }
+
     .ais-Hits-item {
       background-color: var(--background);
     }
