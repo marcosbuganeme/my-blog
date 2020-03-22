@@ -15,7 +15,10 @@ const BlogPost = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        image={post.frontmatter.image} />
       <S.PostHeader>
         <S.PostDate>{post.frontmatter.date} • {post.timeToRead} minutos de leitura</S.PostDate>
         <S.PostTitle>{post.frontmatter.title}</S.PostTitle>
@@ -40,6 +43,7 @@ export const query = graphql`
         title
         description
         date(locale: "pt-br", formatString: "DD [de] MMM [de] YYYY")
+        image
       }
       html
       timeToRead
