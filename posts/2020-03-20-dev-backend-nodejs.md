@@ -5,6 +5,7 @@ title: Criando um backend utilizando nodejs
 description: Aprenda a construir aplicações backend fortes e robustas utilizando nodejs
 category: Node
 background: "#7AAB13"
+image: "/assets/img/desert.jpg"
 ---
 
 # Lorem ipsum
