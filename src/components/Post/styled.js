@@ -200,7 +200,7 @@ export const MainContent = styled.section`
 
   .gatsby-resp-image-image {
     box-shadow: none !important;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s ease;
     &.lazyload {
       opacity: 0;
     }
@@ -227,7 +227,7 @@ export const MainContent = styled.section`
     border-bottom: 1px dashed var(--postColor);
     color: var(--postColor);
     text-decoration: none;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s ease;
     svg {
       color: var(--postColor);
     }
