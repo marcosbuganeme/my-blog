@@ -7,7 +7,7 @@ export const PostItemLink = styled(AniLink)`
   display: flex;
   text-decoration: none;
 
-  body#grid & {
+  body#card & {
     background-color: var(--background);
   }
 
@@ -22,8 +22,9 @@ export const PostItemWrapper = styled.section`
   display: flex;
   padding: 2rem 3rem;
   width: 100%;
+  transition: 0.5s ease;
 
-  body#grid & {
+  body#card & {
     border: none;
     padding: 2rem 1rem;
     flex-direction: column;
@@ -60,7 +61,7 @@ export const PostItemTag = styled.div`
     margin-bottom: .7rem;
   `}
 
-  body#grid & {
+  body#card & {
     margin-bottom: 1.5rem;
   }
 
@@ -88,7 +89,7 @@ export const PostItemTitle = styled.h1`
   font-weight: 700;
   margin: 0.2rem 0 0.5rem;
 
-  body#grid & {
+  body#card & {
     line-height: 1.1;
     margin: 0.8rem 0;
   }
