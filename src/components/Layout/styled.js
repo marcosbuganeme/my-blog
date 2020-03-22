@@ -17,7 +17,7 @@ export const LayoutMain = styled.main`
   transition: background 0.5s ease, color 0.5s ease;
   width: 100%;
 
-  body#grid & {
+  body#card & {
     grid-template-areas:
       'cards'
       'pagination';
