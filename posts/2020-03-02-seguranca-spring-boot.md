@@ -1,10 +1,12 @@
 ---
-date: 2020-03-02 14:15:20
 title: Aplicando segurança utilizando spring boot
-
-description: Deixe suas aplicações em java utilizando spring mais seguras com o spring security
+description: >-
+  Deixe suas aplicações em java utilizando spring mais seguras com o spring
+  security
+date: 2020-03-02T14:15:20.000Z
+thumbnail: assets/img/compra-realizada.png
 category: Java
-background: "#7AAB13"
+background: '#7AAB13'
 ---
 
 # Lorem ipsum
