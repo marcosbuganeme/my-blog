@@ -61,7 +61,7 @@ const MenuBar = () => {
         </S.MenuBarLink>
 
         <S.MenuBarLink
-          to="/cursos/"
+          to="/"
           cover
           direction="right"
           bg={getThemeColor()}
@@ -94,7 +94,7 @@ const MenuBar = () => {
 
         <S.MenuBarItem
           title="Mudar visualização"
-          onClick={() => { window.__setPreferredDisplay(isListMode ? "grid" : "list") }}
+          onClick={() => { window.__setPreferredDisplay(isListMode ? 'card' : 'list') }}
           className="display">
           {isListMode ? <Grid /> : <List />}
         </S.MenuBarItem>
