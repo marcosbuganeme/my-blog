@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: marcosbuganeme/my-blog
+  branch: master
+  site_domain: https://marcosbuganeme.com.br/
+publish_mode: editorial_workflow
+media_folder: "static/assets/img"
+public_folder: "assets/img"
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: 
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD hh:mm:ss",
+        }
+      - { label: "Image", name: "thumbnail", widget: "image" }
+      - {
+        label: "Category",
+        name: "category",
+        widget: "select",
+        options: ["java", "node", "python", "js", "auth", "tdd", "misc"]
+      }
+      - {
+        label: "Background",
+        name: "background",
+        widget: "select",
+        options: [
+          { label: 'Java', value: '#2DA0C3' },
+          { label: 'Node', value: '#EB7728' },
+          { label: 'Python', value: '#7AAB13' },
+          { label: 'JS', value: '#D6BA32' },
+          { label: 'Auth', value: '#7D669E' },
+          { label: 'TDD', value: '#637a91' },
+          { label: "Misc", value: "#B31917" },
+        ]
+      }
+      - { label: "Body", name: "body", widget: "markdown" }
