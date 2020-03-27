@@ -14,13 +14,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-161993060-1",
+        trackingId: `UA-161993060-1`,
         head: true,
         anonymize: true,
         respectDNT: true,
-        pageTransitionDelay: 1000,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10
+        pageTransitionDelay: 650
       },
     },
     `gatsby-plugin-transition-link`,
